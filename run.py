@@ -1,5 +1,11 @@
 import psycopg2
 
+# Dados da conexão
+HOST = "ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com"
+DATA_BASE = "verceldb"
+USER = "default"
+PASS = "xXxXxXxXxXxXxXxXxXxXxXxXxXxXx"
+
 class User:
     def __init__(self, id, name, email):
         self.id = id
@@ -27,10 +33,10 @@ def create_table():
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Cria a tabela
@@ -86,10 +92,10 @@ def insert_user(user):
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Insere o usuário na tabela
@@ -110,10 +116,10 @@ def insert_processo(proc):
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Insere o usuário na tabela
@@ -134,10 +140,10 @@ def insert_post(post):
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Insere o usuário na tabela
@@ -159,10 +165,10 @@ def select_users():
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Seleciona todos os usuários da tabela
@@ -187,10 +193,10 @@ def select_posts():
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Seleciona todos os usuários da tabela
@@ -216,10 +222,10 @@ def select_processos():
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
-            host="ep-fancy-frog-58641694-pooler.us-east-1.postgres.vercel-storage.com",
-            database="verceldb",
-            user="default",
-            password="9gx0ktdnaVZI"
+            host=HOST,
+            database=DATA_BASE,
+            user=USER,
+            password=PASS
         )
 
         # Seleciona todos os usuários da tabela
@@ -244,7 +250,7 @@ def select_processos():
 create_table()
 
 # Insere um usuário
-user = User(None, "ciervo", "ciervo@example.com")
+user = User(None, "Aluno nota 10", "alunonota10@example.com")
 insert_user(user)
 
 # id, processo, data, descricao, status
@@ -252,7 +258,7 @@ proc = Processo(None, "Processo 1", "01/01/2021", "Teste", True)
 insert_processo(proc)
 
 # self, id, title, content, user_id, status, data):
-post = Post(None, "Post 1", "Esse dia foi louco",1, True, "01/01/2021")
+post = Post(None, "Post 2", "Esse dia foi louco",1, True, "01/01/2021")
 insert_post(post)
 
 # Seleciona todos os usuários e exibe na tela
