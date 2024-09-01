@@ -30,6 +30,7 @@ class Post:
         self.datapost = data
 
 def create_table():
+    conn = None  # Inicializa conn como None
     try:
         # Conecta no banco de dados
         conn = psycopg2.connect(
@@ -87,6 +88,7 @@ def create_table():
         # Fecha a conexão
         if conn is not None:
             conn.close()
+
 
 def insert_user(user):
     try:
